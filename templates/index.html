@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drug Prediction System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>💊 Drug Prediction System</h2>
+
+    <form method="post">
+
+        <label>Age</label>
+        <div class="input-group">
+            <span>🎂</span>
+            <input type="number" name="age" required>
+        </div>
+
+        <label>Sex</label>
+        <div class="input-group">
+            <span>👤</span>
+            <select name="sex" required>
+                <option value="">Select</option>
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+            </select>
+        </div>
+
+        <label>Blood Pressure</label>
+        <div class="input-group">
+            <span>🩺</span>
+            <select name="bp" required>
+                <option value="">Select</option>
+                <option value="0">Low</option>
+                <option value="1">Normal</option>
+                <option value="2">High</option>
+            </select>
+        </div>
+
+        <label>Cholesterol</label>
+        <div class="input-group">
+            <span>🧪</span>
+            <select name="cholesterol" required>
+                <option value="">Select</option>
+                <option value="0">Normal</option>
+                <option value="1">High</option>
+            </select>
+        </div>
+
+        <label>Na to K Ratio</label>
+        <div class="input-group">
+            <span>⚗️</span>
+            <input type="text" name="na_to_k" required>
+        </div>
+
+        <button type="submit">🔍 Predict Drug</button>
+    </form>
+
+    {% if prediction %}
+        <div class="result">
+            ✅ Predicted Drug: {{ prediction }}
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
